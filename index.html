@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Joias | Elegância Clássica e Design Focado</title>
+    <!-- Carrega o Tailwind CSS CDN para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font - Usando 'Lora' (Serif) para toda a página -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        /* Configuração de fonte personalizada: Lora para todos os elementos */
+        :root {
+            --font-display: 'Lora', serif; /* Títulos */
+            --font-body: 'Lora', serif; /* Corpo do texto */
+            /* Cor de destaque: Dourado elegante (Hex: D4AF37) */
+            --color-crystal: #D4AF37; 
+        }
+        .font-display { font-family: var(--font-display); }
+        .font-body { font-family: var(--font-body); }
+        
+        /* Cores base para o tema Dourado (Aplicando a cor customizada) */
+        .bg-crystal { background-color: var(--color-crystal); } 
+        .text-crystal { color: var(--color-crystal); }
+        /* Tonalidade um pouco mais escura/rica para o hover */
+        .hover\:bg-crystal-dark:hover { background-color: #A88A2A; } 
+
+        /* Estilo para garantir que o menu mobile fique fora do fluxo quando fechado */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 300px; /* Um valor que garanta a abertura */
+        }
+    </style>
+</head>
+<body class="bg-white text-stone-900 font-body">
+
+    <!-- Cabeçalho e Navegação (Header) -->
+    <header class="shadow-md bg-white sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Marca - Usando a cor dourada para o destaque -->
+            <h1 class="text-3xl font-display font-extrabold text-crystal tracking-wider">AURORA JÓIAS</h1>
+            
+            <!-- Menu Principal (Desktop) -->
+            <nav class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider">
+                <a href="#hero" class="text-stone-700 hover:text-crystal transition duration-300">Início</a>
+                <a href="#produtos" class="text-stone-700 hover:text-crystal transition duration-300">Produtos</a>
+                <!-- Botão de CTA no menu - Contato/WhatsApp -->
+                <a href="#contato" class="py-2 px-4 rounded-full bg-crystal text-white font-semibold hover:bg-crystal-dark transition duration-300 text-xs tracking-wider shadow-md shadow-[#D4AF37]/40">Fale no WhatsApp</a>
+            </nav>
+
+            <!-- Botão do Menu Mobile (SVG Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-stone-900 p-2 rounded-lg hover:text-crystal transition duration-300 focus:outline-none" aria-label="Abrir Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobile-menu" class="md:hidden bg-gray-50 border-t border-gray-200">
+            <nav class="px-4 pt-2 pb-4 space-y-1 uppercase tracking-wider">
+                <a href="#hero" class="block py-2 text-sm text-stone-700 hover:text-crystal transition duration-300 border-b border-gray-100">Início</a>
+                <a href="#produtos" class="block py-2 text-sm text-stone-700 hover:text-crystal transition duration-300 border-b border-gray-100">Produtos</a>
+                <a href="#contato" class="block py-2 text-sm text-stone-700 hover:text-crystal transition duration-300">WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- 1. Seção Hero (Início) -->
+        <section id="hero" class="relative overflow-hidden bg-white">
+            <!-- Imagem de fundo sutil em tons claros para não competir com o texto -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-40" 
+                 style="background-image: url('./images/background.jpg');">
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-48 text-center">
+                <h2 class="text-5xl md:text-8xl font-display font-light leading-tight mb-4 text-stone-900 uppercase tracking-tighter">
+                    Luxo & Elegância
+                </h2>
+                <p class="text-xl md:text-2xl font-body italic mb-10 max-w-3xl mx-auto text-stone-700">
+                    Descubra joias que celebram a elegância atemporal e o design minimalista.
+                </p>
+                <a href="#produtos" class="inline-block py-3 px-10 text-lg font-semibold rounded-full bg-crystal text-white hover:bg-crystal-dark shadow-xl shadow-[#D4AF37]/50 transition duration-300 transform hover:scale-105 uppercase tracking-wider">
+                    Ver Mostruário de Produtos
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Seção de Produtos em Destaque (Mostruário) -->
+        <section id="produtos" class="py-20 bg-gray-50 border-t border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-4xl font-display font-bold text-center mb-16 text-crystal uppercase tracking-widest">Nossos Produtos em Destaque</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Card 1: Anéis (Linha Atemporal) -->
+                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-lg transition duration-500 hover:shadow-xl hover:shadow-[#D4AF37]/20 transform hover:-translate-y-1">
+                        <img src="./images/rings.jpg" alt="[Image of Engagement Rings]" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-2xl font-display font-bold mb-2 text-stone-900 uppercase">Anéis de Noivado</h4>
+                            <p class="text-gray-600 mb-4">A união do ouro com o brilho mais puro. Peças para momentos inesquecíveis.</p>
+                            <a href="#contato" class="text-crystal font-semibold text-sm border-b border-crystal hover:border-b-2 transition duration-300 uppercase tracking-wider">Ver Modelos &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Colares (Linha Fluida) -->
+                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-lg transition duration-500 hover:shadow-xl hover:shadow-[#D4AF37]/20 transform hover:-translate-y-1">
+                        <img src="./images/necklace.jpg" alt="" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-2xl font-display font-bold mb-2 text-stone-900 uppercase">Colares e Pingentes</h4>
+                            <p class="text-gray-600 mb-4">Leveza e movimento para adornar seu dia com sofisticação.</p>
+                            <a href="#contato" class="text-crystal font-semibold text-sm border-b border-crystal hover:border-b-2 transition duration-300 uppercase tracking-wider">Ver a Linha &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Brincos (Linha Moderna) -->
+                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-lg transition duration-500 hover:shadow-xl hover:shadow-[#D4AF37]/20 transform hover:-translate-y-1">
+                        <img src="./images/earrings.jpg" alt="" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-2xl font-display font-bold mb-2 text-stone-900 uppercase">Brincos Minimalistas</h4>
+                            <p class="text-gray-600 mb-4">Peças geométricas e discretas que complementam qualquer estilo.</p>
+                            <a href="#contato" class="text-crystal font-semibold text-sm border-b border-crystal hover:border-b-2 transition duration-300 uppercase tracking-wider">Ver coleção &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção Contato (WhatsApp) -->
+        <section id="contato" class="py-20 bg-white text-center border-t border-gray-200">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xl font-body font-medium text-crystal mb-3 block uppercase tracking-widest">Atendimento Exclusivo</span>
+                <h3 class="text-4xl font-display font-bold mb-6 text-stone-900">Fale Diretamente Conosco</h3>
+                <p class="text-lg text-gray-700 mb-8 font-body">
+                    Para um atendimento personalizado, tirar dúvidas ou fazer seu pedido sob medida, clique no botão abaixo e fale com nossa equipe via WhatsApp.
+                </p>
+                <!-- Botão de WhatsApp (Fictício) -->
+                <a href="https://wa.me/5511900000000" target="_blank" 
+                   class="inline-flex items-center justify-center py-4 px-12 text-lg font-bold rounded-full bg-green-500 text-white hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-2xl shadow-green-500/50 uppercase tracking-wider">
+                    ENVIAR MENSAGEM
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="bg-gray-100 py-10 border-t border-crystal/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8 text-left">
+                <!-- Redes Sociais -->
+                <div>
+                    <h5 class="font-bold text-crystal mb-3 text-sm uppercase tracking-wider font-display">Feito com...</h5>
+                    <div class="flex space-x-4">
+                        ❤️
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm pt-8 border-t border-gray-200">&copy; 2025 Aurora Jóias. Todos os direitos reservados. Design por Anna Damasceno.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para o Menu Mobile e Scroll Suave -->
+    <script>
+        // Função para garantir que os links âncora funcionem de forma suave (scroll suave)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Fecha o menu mobile se estiver aberto (melhor UX)
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                }
+            });
+        });
+
+        // Lógica de toggle para o menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
